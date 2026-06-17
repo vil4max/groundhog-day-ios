@@ -1,0 +1,608 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		074C05B4909E1ACE94AE785B /* ICloudKeyValueSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F9C1E11F941511FBC4B129 /* ICloudKeyValueSync.swift */; };
+		13BF31C67E0ECCB91AC76C7C /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 57C349750BBB34330AED076B /* Localizable.xcstrings */; };
+		2778B1C3D2AD1D95D93BB140 /* FeatureFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EA82446A8269E16FEBF627 /* FeatureFlags.swift */; };
+		7C4E1A9B2D8F6035E1A4B7C2 /* AppLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F8D6C1E9A4B7053D2E6F8A1 /* AppLog.swift */; };
+		3BDBFC9161839C91E58968BA /* CountdownCalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051552F0BC96FB5507DC921C /* CountdownCalculatorTests.swift */; };
+		F60718293A4B5C6D7E8F9012 /* EventDateBoundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F60718293A4B5C6D7E8F9 /* EventDateBoundsTests.swift */; };
+		44060A657904FB8E7E4CAE40 /* CountdownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB8426D923BC86B7D3DB0E /* CountdownView.swift */; };
+		478B0FDF4EF43C3D49F250BB /* CountdownCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F174EA491F0BB187A908AB /* CountdownCalculator.swift */; };
+		4D7D7FF065FEB45EC142B118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 53E2AB1DEE19BAAAEF09B368 /* Assets.xcassets */; };
+		520EEC226AFC1B30CEA1E69A /* FeedbackService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DBB0B25698F897CFD52B68E /* FeedbackService.swift */; };
+		5E4C9E96C6A641F9353B445B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3168F2230BE51D0179650248 /* SettingsView.swift */; };
+		75CBF11ABD489042A6FD894E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 13F83D90CC7DF44013A98ADF /* LaunchScreen.storyboard */; };
+		8608D84E66D1978CAE8C3FC9 /* CountdownComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A11951C1753139F51EFFA0C /* CountdownComponents.swift */; };
+		A1B2C3D4E5F60718293A4B5C /* EventDateBounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F60718293A4B5C6D /* EventDateBounds.swift */; };
+		E5F60718293A4B5C6D7E8F90 /* GroundhogQuotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F60718293A4B5C6D7E8 /* GroundhogQuotes.swift */; };
+		8640F2108C153B3D710311D9 /* EventDateStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769489866C5EB1824C13403 /* EventDateStorage.swift */; };
+		86F92CABE781D69A21D9E6FB /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CAEACC391962B1CEAFB7FDB /* RootView.swift */; };
+		9974239E6F5EBB2DA2EC6CF6 /* FlipDigitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927BA4DB2828BD2FBB620AEF /* FlipDigitView.swift */; };
+		9AC969C2BF33EF5BD8E6E81F /* EventDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5FE29CE7A987FFD19272220 /* EventDatePickerView.swift */; };
+		A7F3AB6E826A81C8BD1EC114 /* NotificationPermissionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C70364F6C223A6D5BA57E608 /* NotificationPermissionSheet.swift */; };
+		BDE90777CCE3ACA1EBBEC0AC /* EventDateEditSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FD467627CCB4E5EBFFA7028 /* EventDateEditSheet.swift */; };
+		CC21C2E85A5DDC380906C72A /* CloudSyncing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0737D42D38B72F98A4DF48A1 /* CloudSyncing.swift */; };
+		CFA438135B6306B826775685 /* FlipClockTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18135931E580CE36F58189D /* FlipClockTheme.swift */; };
+		D4E5F60718293A4B5C6D7E8F /* BlurredHeroBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D4E5F60718293A4B5C6D7E /* BlurredHeroBackground.swift */; };
+		DD7C5AEDA055C451A6DE4575 /* GroundhogDayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4813F9A34EB9D4FCBBFA6218 /* GroundhogDayApp.swift */; };
+		F065F5F02B833528A2F5F32D /* CountdownUnitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1874B5A4AC3046305DD052B /* CountdownUnitRowView.swift */; };
+		B1C2D3E4F5A6789012345ABC /* CountdownUnitCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D3E4F5A67890123456ABCD /* CountdownUnitCarousel.swift */; };
+		F4EAE6FC803C766A5CAACF77 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA726E86A3448BD1E8D2162 /* NotificationScheduler.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		76E2D1DC7F97A30DBADC4CEF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 776A8977049B3B1003C54D76 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10CFCF34C3EA30DD4F27236C;
+			remoteInfo = GroundhogDay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		051552F0BC96FB5507DC921C /* CountdownCalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownCalculatorTests.swift; sourceTree = "<group>"; };
+		E5F60718293A4B5C6D7E8F9 /* EventDateBoundsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDateBoundsTests.swift; sourceTree = "<group>"; };
+		0737D42D38B72F98A4DF48A1 /* CloudSyncing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloudSyncing.swift; sourceTree = "<group>"; };
+		0A11951C1753139F51EFFA0C /* CountdownComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownComponents.swift; sourceTree = "<group>"; };
+		B2C3D4E5F60718293A4B5C6D /* EventDateBounds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDateBounds.swift; sourceTree = "<group>"; };
+		D4E5F60718293A4B5C6D7E8 /* GroundhogQuotes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundhogQuotes.swift; sourceTree = "<group>"; };
+		13F83D90CC7DF44013A98ADF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		18EA82446A8269E16FEBF627 /* FeatureFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeatureFlags.swift; sourceTree = "<group>"; };
+		2F8D6C1E9A4B7053D2E6F8A1 /* AppLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLog.swift; sourceTree = "<group>"; };
+		2FD467627CCB4E5EBFFA7028 /* EventDateEditSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDateEditSheet.swift; sourceTree = "<group>"; };
+		3168F2230BE51D0179650248 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		409B51081B115FFF8B4C249B /* GroundhogDay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroundhogDay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4813F9A34EB9D4FCBBFA6218 /* GroundhogDayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroundhogDayApp.swift; sourceTree = "<group>"; };
+		53E2AB1DEE19BAAAEF09B368 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57C349750BBB34330AED076B /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		5DBB0B25698F897CFD52B68E /* FeedbackService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackService.swift; sourceTree = "<group>"; };
+		63F9C1E11F941511FBC4B129 /* ICloudKeyValueSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICloudKeyValueSync.swift; sourceTree = "<group>"; };
+		8CAEACC391962B1CEAFB7FDB /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		927BA4DB2828BD2FBB620AEF /* FlipDigitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipDigitView.swift; sourceTree = "<group>"; };
+		9769489866C5EB1824C13403 /* EventDateStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDateStorage.swift; sourceTree = "<group>"; };
+		A1EB8426D923BC86B7D3DB0E /* CountdownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownView.swift; sourceTree = "<group>"; };
+		AE090760F65FA53F11C1FA01 /* GroundhogDayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroundhogDayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B26D1BC10930B9DDCEEB9738 /* GroundhogDay.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GroundhogDay.entitlements; sourceTree = "<group>"; };
+		B2F174EA491F0BB187A908AB /* CountdownCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownCalculator.swift; sourceTree = "<group>"; };
+		C70364F6C223A6D5BA57E608 /* NotificationPermissionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionSheet.swift; sourceTree = "<group>"; };
+		CEA726E86A3448BD1E8D2162 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		E18135931E580CE36F58189D /* FlipClockTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipClockTheme.swift; sourceTree = "<group>"; };
+		C3D4E5F60718293A4B5C6D7E /* BlurredHeroBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredHeroBackground.swift; sourceTree = "<group>"; };
+		E1874B5A4AC3046305DD052B /* CountdownUnitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownUnitRowView.swift; sourceTree = "<group>"; };
+		C2D3E4F5A67890123456ABCD /* CountdownUnitCarousel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownUnitCarousel.swift; sourceTree = "<group>"; };
+		E5FE29CE7A987FFD19272220 /* EventDatePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDatePickerView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		02D1C1877998620782C00BDC /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				E5FE29CE7A987FFD19272220 /* EventDatePickerView.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		095715DDF151AE480EC584A8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0737D42D38B72F98A4DF48A1 /* CloudSyncing.swift */,
+				B2F174EA491F0BB187A908AB /* CountdownCalculator.swift */,
+				9769489866C5EB1824C13403 /* EventDateStorage.swift */,
+				5DBB0B25698F897CFD52B68E /* FeedbackService.swift */,
+				63F9C1E11F941511FBC4B129 /* ICloudKeyValueSync.swift */,
+				CEA726E86A3448BD1E8D2162 /* NotificationScheduler.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		1CB23C1EBCDD767958BA6A34 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				91A3ABE7605CE083767F104E /* Countdown */,
+				02D1C1877998620782C00BDC /* Onboarding */,
+				BF92C4B2075A42635F417E42 /* Permissions */,
+				6DDA2E34DAF35F37B045A306 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		257C308F8D9A1AED29991426 /* GroundhogDay */ = {
+			isa = PBXGroup;
+			children = (
+				B26D1BC10930B9DDCEEB9738 /* GroundhogDay.entitlements */,
+				4813F9A34EB9D4FCBBFA6218 /* GroundhogDayApp.swift */,
+				8CAEACC391962B1CEAFB7FDB /* RootView.swift */,
+				AEDE1487181C5C04483ED425 /* Config */,
+				1CB23C1EBCDD767958BA6A34 /* Features */,
+				F592D2851802023910F04A3A /* Models */,
+				8659172D4821493F558259D4 /* Resources */,
+				095715DDF151AE480EC584A8 /* Services */,
+				5FCCE7D195E25FDF5C42AC17 /* Theme */,
+			);
+			path = GroundhogDay;
+			sourceTree = "<group>";
+		};
+		4115D41AE1DBBF346D31CEF1 = {
+			isa = PBXGroup;
+			children = (
+				257C308F8D9A1AED29991426 /* GroundhogDay */,
+				D861BF98F8EF00A999DF1303 /* GroundhogDayTests */,
+				B9CEBF8B0BE1EC37166C355D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5FCCE7D195E25FDF5C42AC17 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				E18135931E580CE36F58189D /* FlipClockTheme.swift */,
+				C3D4E5F60718293A4B5C6D7E /* BlurredHeroBackground.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		6DDA2E34DAF35F37B045A306 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2FD467627CCB4E5EBFFA7028 /* EventDateEditSheet.swift */,
+				3168F2230BE51D0179650248 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		8659172D4821493F558259D4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				53E2AB1DEE19BAAAEF09B368 /* Assets.xcassets */,
+				13F83D90CC7DF44013A98ADF /* LaunchScreen.storyboard */,
+				57C349750BBB34330AED076B /* Localizable.xcstrings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		91A3ABE7605CE083767F104E /* Countdown */ = {
+			isa = PBXGroup;
+			children = (
+				C2D3E4F5A67890123456ABCD /* CountdownUnitCarousel.swift */,
+				E1874B5A4AC3046305DD052B /* CountdownUnitRowView.swift */,
+				A1EB8426D923BC86B7D3DB0E /* CountdownView.swift */,
+				927BA4DB2828BD2FBB620AEF /* FlipDigitView.swift */,
+			);
+			path = Countdown;
+			sourceTree = "<group>";
+		};
+		AEDE1487181C5C04483ED425 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				2F8D6C1E9A4B7053D2E6F8A1 /* AppLog.swift */,
+				18EA82446A8269E16FEBF627 /* FeatureFlags.swift */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		B9CEBF8B0BE1EC37166C355D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				409B51081B115FFF8B4C249B /* GroundhogDay.app */,
+				AE090760F65FA53F11C1FA01 /* GroundhogDayTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BF92C4B2075A42635F417E42 /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				C70364F6C223A6D5BA57E608 /* NotificationPermissionSheet.swift */,
+			);
+			path = Permissions;
+			sourceTree = "<group>";
+		};
+		D861BF98F8EF00A999DF1303 /* GroundhogDayTests */ = {
+			isa = PBXGroup;
+			children = (
+				051552F0BC96FB5507DC921C /* CountdownCalculatorTests.swift */,
+				E5F60718293A4B5C6D7E8F9 /* EventDateBoundsTests.swift */,
+			);
+			path = GroundhogDayTests;
+			sourceTree = "<group>";
+		};
+		F592D2851802023910F04A3A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A11951C1753139F51EFFA0C /* CountdownComponents.swift */,
+				B2C3D4E5F60718293A4B5C6D /* EventDateBounds.swift */,
+				D4E5F60718293A4B5C6D7E8 /* GroundhogQuotes.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		10CFCF34C3EA30DD4F27236C /* GroundhogDay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 46A660F54A351E989A6C6F96 /* Build configuration list for PBXNativeTarget "GroundhogDay" */;
+			buildPhases = (
+				2464A42726E98CB8921164AE /* Sources */,
+				D5CCC493FDC0E39BBF745C93 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GroundhogDay;
+			packageProductDependencies = (
+			);
+			productName = GroundhogDay;
+			productReference = 409B51081B115FFF8B4C249B /* GroundhogDay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC4FE46B9C492E84B4C2369A /* GroundhogDayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1A109BA3200B4326DFF9EA4 /* Build configuration list for PBXNativeTarget "GroundhogDayTests" */;
+			buildPhases = (
+				E660DCA2007B4AD56E6F9ECC /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C1601DE84AA540863BBE49B4 /* PBXTargetDependency */,
+			);
+			name = GroundhogDayTests;
+			packageProductDependencies = (
+			);
+			productName = GroundhogDayTests;
+			productReference = AE090760F65FA53F11C1FA01 /* GroundhogDayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		776A8977049B3B1003C54D76 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2650;
+			};
+			buildConfigurationList = C32DC6DA82EC7C2F1C10EBF3 /* Build configuration list for PBXProject "GroundhogDay" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+				ru,
+				uk,
+			);
+			mainGroup = 4115D41AE1DBBF346D31CEF1;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = B9CEBF8B0BE1EC37166C355D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10CFCF34C3EA30DD4F27236C /* GroundhogDay */,
+				AC4FE46B9C492E84B4C2369A /* GroundhogDayTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D5CCC493FDC0E39BBF745C93 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D7D7FF065FEB45EC142B118 /* Assets.xcassets in Resources */,
+				75CBF11ABD489042A6FD894E /* LaunchScreen.storyboard in Resources */,
+				13BF31C67E0ECCB91AC76C7C /* Localizable.xcstrings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2464A42726E98CB8921164AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC21C2E85A5DDC380906C72A /* CloudSyncing.swift in Sources */,
+				478B0FDF4EF43C3D49F250BB /* CountdownCalculator.swift in Sources */,
+				8608D84E66D1978CAE8C3FC9 /* CountdownComponents.swift in Sources */,
+				A1B2C3D4E5F60718293A4B5C /* EventDateBounds.swift in Sources */,
+				E5F60718293A4B5C6D7E8F90 /* GroundhogQuotes.swift in Sources */,
+				F065F5F02B833528A2F5F32D /* CountdownUnitRowView.swift in Sources */,
+				B1C2D3E4F5A6789012345ABC /* CountdownUnitCarousel.swift in Sources */,
+				44060A657904FB8E7E4CAE40 /* CountdownView.swift in Sources */,
+				BDE90777CCE3ACA1EBBEC0AC /* EventDateEditSheet.swift in Sources */,
+				9AC969C2BF33EF5BD8E6E81F /* EventDatePickerView.swift in Sources */,
+				8640F2108C153B3D710311D9 /* EventDateStorage.swift in Sources */,
+				2778B1C3D2AD1D95D93BB140 /* FeatureFlags.swift in Sources */,
+				7C4E1A9B2D8F6035E1A4B7C2 /* AppLog.swift in Sources */,
+				520EEC226AFC1B30CEA1E69A /* FeedbackService.swift in Sources */,
+				CFA438135B6306B826775685 /* FlipClockTheme.swift in Sources */,
+				D4E5F60718293A4B5C6D7E8F /* BlurredHeroBackground.swift in Sources */,
+				9974239E6F5EBB2DA2EC6CF6 /* FlipDigitView.swift in Sources */,
+				DD7C5AEDA055C451A6DE4575 /* GroundhogDayApp.swift in Sources */,
+				074C05B4909E1ACE94AE785B /* ICloudKeyValueSync.swift in Sources */,
+				A7F3AB6E826A81C8BD1EC114 /* NotificationPermissionSheet.swift in Sources */,
+				F4EAE6FC803C766A5CAACF77 /* NotificationScheduler.swift in Sources */,
+				86F92CABE781D69A21D9E6FB /* RootView.swift in Sources */,
+				5E4C9E96C6A641F9353B445B /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E660DCA2007B4AD56E6F9ECC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3BDBFC9161839C91E58968BA /* CountdownCalculatorTests.swift in Sources */,
+				F60718293A4B5C6D7E8F9012 /* EventDateBoundsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C1601DE84AA540863BBE49B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10CFCF34C3EA30DD4F27236C /* GroundhogDay */;
+			targetProxy = 76E2D1DC7F97A30DBADC4CEF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		120046F7324B5354361699BB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vil4max.groundhogday.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GroundhogDay.app/GroundhogDay";
+			};
+			name = Debug;
+		};
+		16746EF6A570EBE0892BF0A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = BTHRDS7254;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Groundhog Day";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				"INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad" = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		82CDA27EA83E8C32E4BABE99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GroundhogDay/GroundhogDay.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSUserNotificationsUsageDescription = "Reminders about your countdown event at 6:00 and when it arrives.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				"INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad" = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vil4max.groundhogday;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DF9B57E60D05C477D28989C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = BTHRDS7254;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Groundhog Day";
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				"INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad" = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		E8BD1774F03956C5648D76CA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = GroundhogDay/GroundhogDay.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSUserNotificationsUsageDescription = "Reminders about your countdown event at 6:00 and when it arrives.";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				"INFOPLIST_KEY_UISupportedInterfaceOrientations~ipad" = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vil4max.groundhogday;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F16D142A20ECF0C99F3F2647 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.vil4max.groundhogday.tests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GroundhogDay.app/GroundhogDay";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		46A660F54A351E989A6C6F96 /* Build configuration list for PBXNativeTarget "GroundhogDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E8BD1774F03956C5648D76CA /* Debug */,
+				82CDA27EA83E8C32E4BABE99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C1A109BA3200B4326DFF9EA4 /* Build configuration list for PBXNativeTarget "GroundhogDayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				120046F7324B5354361699BB /* Debug */,
+				F16D142A20ECF0C99F3F2647 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C32DC6DA82EC7C2F1C10EBF3 /* Build configuration list for PBXProject "GroundhogDay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				16746EF6A570EBE0892BF0A7 /* Debug */,
+				DF9B57E60D05C477D28989C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 776A8977049B3B1003C54D76 /* Project object */;
+}
