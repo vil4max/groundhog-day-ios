@@ -64,5 +64,6 @@ struct EventSnapshot: Codable, Equatable, Sendable {
     var notificationsEnabled: Bool
     var dailyReminderMessage: String?
     var eventArrivedMessage: String?
+    var defaultCountdownUnitRawValue: Int?
     var lastModifiedAt: TimeInterval
 }

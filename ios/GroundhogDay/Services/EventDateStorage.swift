@@ -11,6 +11,7 @@ final class EventDateStorage {
         static let dailyReminderMessage = "dailyReminderMessage"
         static let eventArrivedMessage = "eventArrivedMessage"
         static let needsFullRevealAnimation = "needsFullRevealAnimation"
+        static let defaultCountdownUnit = "defaultCountdownUnit"
         static let lastModifiedAt = "lastModifiedAt"
     }
 
@@ -23,6 +24,7 @@ final class EventDateStorage {
     var dailyReminderMessage: String?
     var eventArrivedMessage: String?
     var needsFullRevealAnimation: Bool
+    var defaultCountdownUnit: CountdownUnit
 
     var hasEvent: Bool {
         eventTargetDate != nil
@@ -50,6 +52,7 @@ final class EventDateStorage {
         dailyReminderMessage = defaults.string(forKey: Keys.dailyReminderMessage)
         eventArrivedMessage = defaults.string(forKey: Keys.eventArrivedMessage)
         needsFullRevealAnimation = defaults.object(forKey: Keys.needsFullRevealAnimation) as? Bool ?? true
+        defaultCountdownUnit = CountdownUnit(rawValue: defaults.integer(forKey: Keys.defaultCountdownUnit)) ?? .years
 
         cloudSync.startObserving { [weak self] in
             Task { @MainActor in
@@ -91,6 +94,12 @@ final class EventDateStorage {
         persist()
     }
 
+    func setDefaultCountdownUnit(_ unit: CountdownUnit) {
+        defaultCountdownUnit = unit
+        AppLog.storage.info("Default countdown unit: \(unit.rawValue, privacy: .public)")
+        persist()
+    }
+
     func markRevealAnimationCompleted() {
         needsFullRevealAnimation = false
         defaults.set(false, forKey: Keys.needsFullRevealAnimation)
@@ -128,6 +137,7 @@ final class EventDateStorage {
             defaults.removeObject(forKey: Keys.eventArrivedMessage)
         }
         defaults.set(needsFullRevealAnimation, forKey: Keys.needsFullRevealAnimation)
+        defaults.set(defaultCountdownUnit.rawValue, forKey: Keys.defaultCountdownUnit)
 
         let modifiedAt = Date().timeIntervalSince1970
         defaults.set(modifiedAt, forKey: Keys.lastModifiedAt)
@@ -138,6 +148,7 @@ final class EventDateStorage {
             notificationsEnabled: notificationsEnabled,
             dailyReminderMessage: dailyReminderMessage,
             eventArrivedMessage: eventArrivedMessage,
+            defaultCountdownUnitRawValue: defaultCountdownUnit.rawValue,
             lastModifiedAt: modifiedAt
         )
         Task {
@@ -155,6 +166,9 @@ final class EventDateStorage {
         notificationsEnabled = remote.notificationsEnabled
         dailyReminderMessage = remote.dailyReminderMessage
         eventArrivedMessage = remote.eventArrivedMessage
+        if let raw = remote.defaultCountdownUnitRawValue {
+            defaultCountdownUnit = CountdownUnit(rawValue: raw) ?? .years
+        }
         persist()
     }
 }

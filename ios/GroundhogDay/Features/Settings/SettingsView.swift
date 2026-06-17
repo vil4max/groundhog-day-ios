@@ -41,6 +41,14 @@ struct SettingsView: View {
                     }
                 }
             }
+            Section(String(localized: "settings.displaySection")) {
+                Picker(String(localized: "settings.defaultUnit"), selection: defaultUnitBinding) {
+                    ForEach(CountdownUnit.allCases, id: \.rawValue) { unit in
+                        Text(String(localized: String.LocalizationValue(unit.localizationKey)))
+                            .tag(unit)
+                    }
+                }
+            }
             Section {
                 Toggle(String(localized: "settings.notifications"), isOn: notificationsBinding)
                     .disabled(authorizationStatus == .denied)
@@ -97,6 +105,16 @@ struct SettingsView: View {
                 Task { await scheduler.rescheduleAll() }
             }
         }
+    }
+
+    private var defaultUnitBinding: Binding<CountdownUnit> {
+        Binding(
+            get: { storage.defaultCountdownUnit },
+            set: { newValue in
+                storage.setDefaultCountdownUnit(newValue)
+                feedback.play(.toggle)
+            }
+        )
     }
 
     private var notificationsBinding: Binding<Bool> {

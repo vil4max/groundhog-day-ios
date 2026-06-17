@@ -13,10 +13,17 @@ struct CountdownView: View {
     @State private var previousUnitValues = Array(repeating: 0, count: CountdownUnit.allCases.count)
     @State private var titleContextDate = Date.now
     @State private var lastTickEpochSecond: Int?
-    @State private var selectedUnitIndex = 0
+    @State private var selectedUnitIndex: Int
 
     private let units = CountdownUnit.allCases
     private let revealCarouselLastIndex = 1
+
+    init(storage: EventDateStorage, feedback: FeedbackService, scheduler: NotificationScheduler) {
+        self.storage = storage
+        self.feedback = feedback
+        self.scheduler = scheduler
+        _selectedUnitIndex = State(initialValue: storage.defaultCountdownUnit.rawValue)
+    }
 
     var body: some View {
         GeometryReader { proxy in
@@ -95,6 +102,9 @@ struct CountdownView: View {
         }
         .onChange(of: storage.isEventPassed) { _, _ in
             syncTickLoop()
+        }
+        .onChange(of: storage.defaultCountdownUnit) { _, unit in
+            selectedUnitIndex = unit.rawValue
         }
     }
 
@@ -319,7 +329,7 @@ struct CountdownView: View {
 
     private func finishReveal() {
         settledRowCount = units.count
-        selectedUnitIndex = 0
+        applyStoredUnitSelection()
         previousUnitValues = unitValues
         syncTickLoop()
     }
@@ -331,7 +341,7 @@ struct CountdownView: View {
 
         if storage.isEventPassed {
             settledRowCount = units.count
-            selectedUnitIndex = 0
+            applyStoredUnitSelection()
             previousUnitValues = unitValues
             AppLog.countdown.info("Reveal skipped: event already passed")
             return
@@ -339,7 +349,7 @@ struct CountdownView: View {
 
         guard storage.needsFullRevealAnimation else {
             settledRowCount = units.count
-            selectedUnitIndex = 0
+            applyStoredUnitSelection()
             previousUnitValues = unitValues
             syncTickLoop()
             AppLog.countdown.info("Reveal skipped: already shown")
@@ -351,7 +361,7 @@ struct CountdownView: View {
 
         if reduceMotion {
             settledRowCount = units.count
-            selectedUnitIndex = 0
+            applyStoredUnitSelection()
             storage.markRevealAnimationCompleted()
             previousUnitValues = unitValues
             syncTickLoop()
@@ -376,6 +386,10 @@ struct CountdownView: View {
                 finishReveal()
             }
         }
+    }
+
+    private func applyStoredUnitSelection() {
+        selectedUnitIndex = storage.defaultCountdownUnit.rawValue
     }
 
     private func handleTick(at date: Date) {
