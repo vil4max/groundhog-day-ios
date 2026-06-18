@@ -40,21 +40,47 @@ struct FlipDigitView: View {
                 stopSpinning(show: digit)
             }
         }
-        .onChange(of: digit) { oldValue, newValue in
+        .onChange(of: digit) { _, newValue in
             guard !isSpinning else { return }
-            animateChange(from: oldValue, to: newValue)
+            guard newValue != settledDigit || isFlipping else { return }
+            animateChange(from: settledDigit, to: newValue)
         }
         .onAppear {
-            if isSpinning {
-                startSpinning()
-            } else {
-                settledDigit = digit
-            }
+            syncToDisplayedDigit(spinning: isSpinning)
         }
         .onDisappear {
             spinTask?.cancel()
+            spinTask = nil
             flipCompletionTask?.cancel()
+            flipCompletionTask = nil
+            snapToDigit(digit)
         }
+    }
+
+    private func syncToDisplayedDigit(spinning: Bool) {
+        flipCompletionTask?.cancel()
+        flipCompletionTask = nil
+        spinTask?.cancel()
+        spinTask = nil
+        snapToDigit(digit)
+        if spinning {
+            startSpinning()
+        }
+    }
+
+    private func snapToDigit(_ value: Int) {
+        var transaction = Transaction()
+        transaction.disablesAnimations = true
+        withTransaction(transaction) {
+            settledDigit = value
+            isFlipping = false
+            flipProgress = 0
+        }
+    }
+
+    private func snapMidFlipIfNeeded() {
+        guard isFlipping else { return }
+        snapToDigit(flipProgress >= 0.5 ? flipToDigit : flipFromDigit)
     }
 
     private var tileShell: some View {
@@ -159,6 +185,7 @@ struct FlipDigitView: View {
         guard oldValue != newValue else { return }
 
         flipCompletionTask?.cancel()
+        snapMidFlipIfNeeded()
 
         if reduceMotion {
             settledDigit = newValue

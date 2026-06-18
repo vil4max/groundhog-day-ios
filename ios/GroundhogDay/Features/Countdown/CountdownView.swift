@@ -2,6 +2,7 @@ import SwiftUI
 
 struct CountdownView: View {
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.scenePhase) private var scenePhase
     @Bindable var storage: EventDateStorage
     let feedback: FeedbackService
     let scheduler: NotificationScheduler
@@ -83,14 +84,17 @@ struct CountdownView: View {
         }
         .onAppear {
             AppLog.countdown.info("Countdown view appeared")
-            titleContextDate = .now
-            refreshUnitValues()
+            refreshAllSlotsOnOpen()
             startRevealAnimation()
         }
         .onDisappear {
             AppLog.countdown.info("Countdown view disappeared")
             revealTask?.cancel()
             tickTask?.cancel()
+        }
+        .onChange(of: scenePhase) { _, phase in
+            guard phase == .active else { return }
+            refreshAllSlotsOnOpen()
         }
         .onChange(of: storage.needsFullRevealAnimation) { _, needsFull in
             if needsFull {
@@ -297,6 +301,14 @@ struct CountdownView: View {
     private func isRowMuted(_ index: Int) -> Bool {
         guard !storage.isEventPassed else { return false }
         return value(for: units[index]) == 0
+    }
+
+    private func refreshAllSlotsOnOpen() {
+        titleContextDate = .now
+        refreshUnitValues()
+        previousUnitValues = unitValues
+        lastTickEpochSecond = nil
+        syncTickLoop()
     }
 
     private func refreshUnitValues(at date: Date = .now) {
