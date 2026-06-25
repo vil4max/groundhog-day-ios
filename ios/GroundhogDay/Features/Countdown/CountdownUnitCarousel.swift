@@ -51,7 +51,7 @@ struct CountdownUnitCarousel: View {
                 handleScrollPositionChange(newPosition)
             }
             .onChange(of: selectedUnitIndex) { _, newIndex in
-                syncScrollToUnit(newIndex, animated: true)
+                syncScrollToUnit(newIndex, animated: false)
             }
         }
         .frame(height: tileAreaHeight)

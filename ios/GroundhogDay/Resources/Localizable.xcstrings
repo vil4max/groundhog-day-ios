@@ -879,94 +879,71 @@
         }
       }
     },
-    "push.daily.body %@ %@" : {
+    "push.daily.body" : {
       "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@\n%2$@"
+            "value" : "Another day passed. You're one day closer."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@\n%2$@"
+            "value" : "Ещё один день прошёл. Вы на день ближе к дате."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@\n%2$@"
+            "value" : "Ще один день минув. Ви на день ближче до дати."
           }
         }
       }
     },
-    "push.daily.countdown %@ %@" : {
+    "push.daily.body.labeled %@" : {
       "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Still %1$@ — or %2$@"
+            "value" : "Until %@"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Осталось: %1$@ — или %2$@"
+            "value" : "До %@"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Залишилось: %1$@ — або %2$@"
+            "value" : "До %@"
           }
         }
       }
     },
-    "push.daily.greeting" : {
+    "push.daily.title %lld" : {
       "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Okay, campers, rise and shine, and don't forget your booties 'cause it's cold out there today!"
+            "value" : "%lld days"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ну что, отдыхающие, подъём! И не забудьте тапочки — на улице холодно!"
+            "value" : "%lld дней"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Гей, відпочиваючі, підйом! І не забудьте тапочки — на вулиці холодно!"
-          }
-        }
-      }
-    },
-    "push.daily.title" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rise and shine."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Подъём."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Підйом."
+            "value" : "%lld днів"
           }
         }
       }
@@ -1059,29 +1036,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "День бабака!"
-          }
-        }
-      }
-    },
-    "push.orDays %lld" : {
-      "extractionState" : "stale",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld days"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld дней"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%lld днів"
           }
         }
       }

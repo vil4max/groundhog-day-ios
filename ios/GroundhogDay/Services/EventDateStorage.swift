@@ -52,7 +52,12 @@ final class EventDateStorage {
         dailyReminderMessage = defaults.string(forKey: Keys.dailyReminderMessage)
         eventArrivedMessage = defaults.string(forKey: Keys.eventArrivedMessage)
         needsFullRevealAnimation = defaults.object(forKey: Keys.needsFullRevealAnimation) as? Bool ?? true
-        defaultCountdownUnit = CountdownUnit(rawValue: defaults.integer(forKey: Keys.defaultCountdownUnit)) ?? .years
+        if defaults.object(forKey: Keys.defaultCountdownUnit) != nil {
+            defaultCountdownUnit = CountdownUnit(rawValue: defaults.integer(forKey: Keys.defaultCountdownUnit)) ?? .days
+        } else {
+            defaultCountdownUnit = .days
+            defaults.set(CountdownUnit.days.rawValue, forKey: Keys.defaultCountdownUnit)
+        }
 
         cloudSync.startObserving { [weak self] in
             Task { @MainActor in
@@ -167,7 +172,7 @@ final class EventDateStorage {
         dailyReminderMessage = remote.dailyReminderMessage
         eventArrivedMessage = remote.eventArrivedMessage
         if let raw = remote.defaultCountdownUnitRawValue {
-            defaultCountdownUnit = CountdownUnit(rawValue: raw) ?? .years
+            defaultCountdownUnit = CountdownUnit(rawValue: raw) ?? .days
         }
         persist()
     }

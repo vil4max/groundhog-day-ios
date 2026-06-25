@@ -7,7 +7,6 @@ struct SettingsView: View {
     let scheduler: NotificationScheduler
 
     @State private var label = ""
-    @State private var dailyReminderMessage = ""
     @State private var eventArrivedMessage = ""
     @State private var showDateSheet = false
     @State private var draftDate = Date.now
@@ -53,16 +52,6 @@ struct SettingsView: View {
                 Toggle(String(localized: "settings.notifications"), isOn: notificationsBinding)
                     .disabled(authorizationStatus == .denied)
                 TextField(
-                    String(localized: "settings.dailyReminderMessage"),
-                    text: $dailyReminderMessage,
-                    prompt: Text(String(localized: "push.daily.greeting")),
-                    axis: .vertical
-                )
-                .lineLimit(3 ... 6)
-                .onChange(of: dailyReminderMessage) { _, newValue in
-                    storage.saveDailyReminderMessage(newValue)
-                }
-                TextField(
                     String(localized: "settings.eventArrivedMessage"),
                     text: $eventArrivedMessage,
                     prompt: Text(String(localized: "push.eventArrived.bodyGeneric")),
@@ -87,7 +76,6 @@ struct SettingsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .onAppear {
             label = storage.eventLabel ?? ""
-            dailyReminderMessage = storage.dailyReminderMessage ?? ""
             eventArrivedMessage = storage.eventArrivedMessage ?? ""
             Task { await refreshAuthorizationStatus() }
         }

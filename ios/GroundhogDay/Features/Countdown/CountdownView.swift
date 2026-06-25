@@ -17,7 +17,7 @@ struct CountdownView: View {
     @State private var selectedUnitIndex: Int
 
     private let units = CountdownUnit.allCases
-    private let revealCarouselLastIndex = 1
+    private let revealCarouselLastIndex = CountdownUnit.days.rawValue
 
     init(storage: EventDateStorage, feedback: FeedbackService, scheduler: NotificationScheduler) {
         self.storage = storage

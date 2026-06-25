@@ -66,8 +66,7 @@ final class NotificationScheduler {
         let daily = NotificationTextBuilder.dailyContent(
             eventDate: eventDate,
             now: now,
-            label: storage.eventLabel,
-            customGreeting: storage.dailyReminderMessage
+            label: storage.eventLabel
         )
         content.title = daily.title
         content.body = daily.body
@@ -115,14 +114,16 @@ enum NotificationTextBuilder {
     static func dailyContent(
         eventDate: Date,
         now: Date,
-        label: String?,
-        customGreeting: String?
+        label: String?
     ) -> (title: String, body: String) {
-        let title = String(localized: "push.daily.title")
-        let greeting = customGreeting?.trimmingCharacters(in: .whitespacesAndNewlines).nilIfEmpty
-            ?? String(localized: "push.daily.greeting")
-        let countdown = dailyCountdownSummary(eventDate: eventDate, now: now, label: label)
-        let body = String(localized: "push.daily.body \(greeting) \(countdown)")
+        let days = CountdownCalculator.totalCalendarDays(from: now, to: eventDate)
+        let title = String(localized: "push.daily.title \(days)")
+        let trimmedLabel = label?.trimmingCharacters(in: .whitespacesAndNewlines).nilIfEmpty
+        let body = if let trimmedLabel {
+            String(localized: "push.daily.body.labeled \(trimmedLabel)")
+        } else {
+            String(localized: "push.daily.body")
+        }
         return (title, body)
     }
 
@@ -138,32 +139,6 @@ enum NotificationTextBuilder {
             return String(localized: "push.eventArrived.body \(label)")
         }
         return String(localized: "push.eventArrived.bodyGeneric")
-    }
-
-    private static func dailyCountdownSummary(eventDate: Date, now: Date, label: String?) -> String {
-        let components = CountdownCalculator.components(from: now, to: eventDate)
-        let summary = topComponentsSummary(components)
-        let days = CountdownCalculator.totalCalendarDays(from: now, to: eventDate)
-        let daysPart = String(localized: "push.orDays \(days)")
-        let countdown = String(localized: "push.daily.countdown \(summary) \(daysPart)")
-        if let label {
-            return String(localized: "countdown.until \(label)") + ". " + countdown
-        }
-        return countdown
-    }
-
-    private static func topComponentsSummary(_ components: CountdownComponents) -> String {
-        let pairs: [(Int, String)] = [
-            (components.years, String(localized: "unit.years")),
-            (components.months, String(localized: "unit.months")),
-            (components.weeks, String(localized: "unit.weeks")),
-            (components.days, String(localized: "unit.days")),
-            (components.hours, String(localized: "unit.hours")),
-            (components.minutes, String(localized: "unit.minutes")),
-            (components.seconds, String(localized: "unit.seconds")),
-        ]
-        let nonZero = pairs.filter { $0.0 > 0 }.prefix(3)
-        return nonZero.map { "\($0.0) \($0.1)" }.joined(separator: ", ")
     }
 }
 
