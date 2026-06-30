@@ -127,13 +127,18 @@ enum NotificationTextBuilder {
     ) -> (title: String, body: String) {
         let days = CountdownCalculator.totalCalendarDays(from: now, to: eventDate)
         let title = String(localized: "push.daily.title \(days)")
+        let alarmPhrase = quotedLine(GroundhogAlarmPhrases.phrase(for: now))
         let trimmedLabel = label?.trimmingCharacters(in: .whitespacesAndNewlines).nilIfEmpty
         let body = if let trimmedLabel {
-            String(localized: "push.daily.body.labeled \(trimmedLabel)")
+            String(localized: "push.daily.body.labeled.withAlarm \(alarmPhrase) \(trimmedLabel)")
         } else {
-            String(localized: "push.daily.body")
+            String(localized: "push.daily.body.withAlarm \(alarmPhrase)")
         }
         return (title, body)
+    }
+
+    private static func quotedLine(_ line: String) -> String {
+        "\u{201C}\(line)\u{201D}"
     }
 
     static func eventArrivedBody(label: String?, customMessage: String?) -> String {
