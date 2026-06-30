@@ -879,25 +879,24 @@
         }
       }
     },
-    "push.daily.body" : {
-      "extractionState" : "stale",
+    "push.daily.body %lld" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Another day passed. You're one day closer."
+            "value" : "%lld days"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ещё один день прошёл. Вы на день ближе к дате."
+            "value" : "%lld дней"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ще один день минув. Ви на день ближче до дати."
+            "value" : "%lld днів"
           }
         }
       }
@@ -925,50 +924,6 @@
         }
       }
     },
-    "push.daily.body.labeled.withAlarm %@ %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ Until %@"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ До %@"
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ До %@"
-          }
-        }
-      }
-    },
-    "push.daily.body.withAlarm %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ Another day passed. You're one day closer."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ Ещё один день прошёл. Вы на день ближе к дате."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ Ще один день минув. Ви на день ближче до дати."
-          }
-        }
-      }
-    },
     "push.daily.title %lld" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -992,7 +947,7 @@
         }
       }
     },
-    "push.alarm.1" : {
+    "push.alarm.title" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -1010,138 +965,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ну що, друзі, підйом! І не забудьте тапочки — на вулиці сьогодні дуууже холодно."
-          }
-        }
-      }
-    },
-    "push.alarm.2" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "It's coooold out there today."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "На улице сегодня оооочень холодно."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "На вулиці сьогодні дуууже холодно."
-          }
-        }
-      }
-    },
-    "push.alarm.3" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Don't forget your booties 'cause it's coooold out there today."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не забудьте тапочки — на улице сегодня оооочень холодно."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не забудьте тапочки — на вулиці сьогодні дуууже холодно."
-          }
-        }
-      }
-    },
-    "push.alarm.4" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Put a little shuffle in your step."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Добавьте чуть-чуть пружинки в походку."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Додайте трохи пружинки в ходу."
-          }
-        }
-      }
-    },
-    "push.alarm.5" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "It's Groundhog Day! At the crack of dawn, everyone's going to be lining up at Gobbler's Knob."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сегодня День сурка! На рассвете все выстроятся в очередь на Курином холме."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сьогодні День бабака! На світанку усі вишикуються в чергу на Курячому пагорбі."
-          }
-        }
-      }
-    },
-    "push.alarm.6" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Each and every one of you assembled here today is getting older."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Каждый из вас, собравшихся здесь сегодня, становится старше."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Кожен із вас, зібраних тут сьогодні, стає старшим."
-          }
-        }
-      }
-    },
-    "push.alarm.7" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Well, it's Groundhog Day. Again."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ну что ж, сегодня День сурка. Снова."
-          }
-        },
-        "uk" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ну що ж, сьогодні День бабака. Знову."
           }
         }
       }
