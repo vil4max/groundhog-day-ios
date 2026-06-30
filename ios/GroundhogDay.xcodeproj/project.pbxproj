@@ -35,6 +35,8 @@
 		F065F5F02B833528A2F5F32D /* CountdownUnitRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1874B5A4AC3046305DD052B /* CountdownUnitRowView.swift */; };
 		B1C2D3E4F5A6789012345ABC /* CountdownUnitCarousel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D3E4F5A67890123456ABCD /* CountdownUnitCarousel.swift */; };
 		F4EAE6FC803C766A5CAACF77 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA726E86A3448BD1E8D2162 /* NotificationScheduler.swift */; };
+		A8B9C0D1E2F3041526374859 /* DailyReminderPlanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7C8D9E0F1A2031425364758 /* DailyReminderPlanner.swift */; };
+		C9D0E1F2A3B4051627384950 /* DailyReminderPlannerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E1F2A3B4C5061728394051 /* DailyReminderPlannerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +76,8 @@
 		B2F174EA491F0BB187A908AB /* CountdownCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownCalculator.swift; sourceTree = "<group>"; };
 		C70364F6C223A6D5BA57E608 /* NotificationPermissionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionSheet.swift; sourceTree = "<group>"; };
 		CEA726E86A3448BD1E8D2162 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		B7C8D9E0F1A2031425364758 /* DailyReminderPlanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReminderPlanner.swift; sourceTree = "<group>"; };
+		D0E1F2A3B4C5061728394051 /* DailyReminderPlannerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyReminderPlannerTests.swift; sourceTree = "<group>"; };
 		E18135931E580CE36F58189D /* FlipClockTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlipClockTheme.swift; sourceTree = "<group>"; };
 		C3D4E5F60718293A4B5C6D7E /* BlurredHeroBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurredHeroBackground.swift; sourceTree = "<group>"; };
 		E1874B5A4AC3046305DD052B /* CountdownUnitRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownUnitRowView.swift; sourceTree = "<group>"; };
@@ -99,6 +103,7 @@
 				5DBB0B25698F897CFD52B68E /* FeedbackService.swift */,
 				63F9C1E11F941511FBC4B129 /* ICloudKeyValueSync.swift */,
 				CEA726E86A3448BD1E8D2162 /* NotificationScheduler.swift */,
+				B7C8D9E0F1A2031425364758 /* DailyReminderPlanner.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 			children = (
 				051552F0BC96FB5507DC921C /* CountdownCalculatorTests.swift */,
 				E5F60718293A4B5C6D7E8F9 /* EventDateBoundsTests.swift */,
+				D0E1F2A3B4C5061728394051 /* DailyReminderPlannerTests.swift */,
 			);
 			path = GroundhogDayTests;
 			sourceTree = "<group>";
@@ -332,6 +338,7 @@
 				074C05B4909E1ACE94AE785B /* ICloudKeyValueSync.swift in Sources */,
 				A7F3AB6E826A81C8BD1EC114 /* NotificationPermissionSheet.swift in Sources */,
 				F4EAE6FC803C766A5CAACF77 /* NotificationScheduler.swift in Sources */,
+				A8B9C0D1E2F3041526374859 /* DailyReminderPlanner.swift in Sources */,
 				86F92CABE781D69A21D9E6FB /* RootView.swift in Sources */,
 				5E4C9E96C6A641F9353B445B /* SettingsView.swift in Sources */,
 			);
@@ -343,6 +350,7 @@
 			files = (
 				3BDBFC9161839C91E58968BA /* CountdownCalculatorTests.swift in Sources */,
 				F60718293A4B5C6D7E8F9012 /* EventDateBoundsTests.swift in Sources */,
+				C9D0E1F2A3B4051627384950 /* DailyReminderPlannerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
