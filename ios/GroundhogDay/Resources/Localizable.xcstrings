@@ -884,19 +884,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld days"
+            "value" : "%lld days left, campers. Same alarm tomorrow morning."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld дней"
+            "value" : "Ещё %lld дней, ребята. Завтра тот же будильник."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld днів"
+            "value" : "Ще %lld днів, друзі. Завтра той самий будильник."
           }
         }
       }
@@ -952,19 +952,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Okay, campers, rise and shine, and don't forget your booties 'cause it's cooooold out there today."
+            "value" : "Okay, campers, rise and shine!"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ну что, ребята, подъём! И не забудьте тапочки — на улице сегодня оооочень холодно."
+            "value" : "Ну что, ребята, подъём!"
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ну що, друзі, підйом! І не забудьте тапочки — на вулиці сьогодні дуууже холодно."
+            "value" : "Ну що, друзі, підйом!"
           }
         }
       }
