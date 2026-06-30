@@ -884,19 +884,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%lld days to go, and it's cooooold out there today."
+            "value" : "%lld days left, campers. Same alarm tomorrow morning."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ещё %lld дней — на улице сегодня оооочень холодно."
+            "value" : "Ещё %lld дней, ребята. Завтра тот же будильник."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ще %lld днів — на вулиці сьогодні дуууже холодно."
+            "value" : "Ще %lld днів, друзі. Завтра той самий будильник."
           }
         }
       }
