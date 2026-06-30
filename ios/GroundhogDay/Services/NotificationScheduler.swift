@@ -4,7 +4,8 @@ import UserNotifications
 @MainActor
 final class NotificationScheduler {
     enum Identifier {
-        static let dailyReminder = "daily-reminder"
+        static let dailyReminderPrefix = DailyReminderPlanner.identifierPrefix
+        static let legacyDailyReminder = DailyReminderPlanner.legacyIdentifier
         static let eventArrived = "event-arrived"
     }
 
@@ -33,10 +34,15 @@ final class NotificationScheduler {
 
     func rescheduleAll(now: Date = .now) async {
         AppLog.notifications.info("Rescheduling all notifications")
-        center.removePendingNotificationRequests(withIdentifiers: [
-            Identifier.dailyReminder,
-            Identifier.eventArrived,
-        ])
+        let pending = await center.pendingNotificationRequests()
+        let dailyReminderIdentifiers = pending
+            .map(\.identifier)
+            .filter {
+                $0 == Identifier.legacyDailyReminder || $0.hasPrefix(Identifier.dailyReminderPrefix)
+            }
+        center.removePendingNotificationRequests(
+            withIdentifiers: dailyReminderIdentifiers + [Identifier.eventArrived]
+        )
 
         guard storage.notificationsEnabled else {
             AppLog.notifications.debug("Skipped: notifications disabled in app")
@@ -62,27 +68,30 @@ final class NotificationScheduler {
     }
 
     private func scheduleDailyReminder(eventDate: Date, now: Date) async {
-        let content = UNMutableNotificationContent()
-        let daily = NotificationTextBuilder.dailyContent(
+        let reminders = DailyReminderPlanner.reminders(
             eventDate: eventDate,
             now: now,
             label: storage.eventLabel
         )
-        content.title = daily.title
-        content.body = daily.body
-        content.sound = .default
 
-        var dateComponents = DateComponents()
-        dateComponents.hour = 6
-        dateComponents.minute = 0
+        for reminder in reminders {
+            let content = UNMutableNotificationContent()
+            content.title = reminder.title
+            content.body = reminder.body
+            content.sound = .default
 
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        let request = UNNotificationRequest(
-            identifier: Identifier.dailyReminder,
-            content: content,
-            trigger: trigger
-        )
-        try? await center.add(request)
+            let components = Calendar.current.dateComponents(
+                [.year, .month, .day, .hour, .minute],
+                from: reminder.fireDate
+            )
+            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+            let request = UNNotificationRequest(
+                identifier: reminder.identifier,
+                content: content,
+                trigger: trigger
+            )
+            try? await center.add(request)
+        }
     }
 
     private func scheduleEventArrived(eventDate: Date, now: Date) async {
